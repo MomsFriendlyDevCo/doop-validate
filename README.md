@@ -1,4 +1,4 @@
-@doop/service-{{FIXME}}
+@doop/validate
 ==================
 
-A {{FIXME}} service for the [Doop framework](https://github.com/MomsFriendlyDevCo/Doop).
+A validation service for the [Doop framework](https://github.com/MomsFriendlyDevCo/Doop).
