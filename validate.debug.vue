@@ -23,6 +23,14 @@ app.component({
 			<div class="card-body">
 				<div class="row">
 					<div class="col-sm-12 col-md-6">
+						<v-validate-summary/>
+					</div>
+					<div class="col-sm-12 col-md-6">
+						<pre>&lt;v-validate-summary/&gt;</pre>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 col-md-6">
 						<input type="text" class="form-control" placeholder="required: true" v-validate="{rules: {required: true}}"/>
 					</div>
 					<div class="col-sm-12 col-md-6">

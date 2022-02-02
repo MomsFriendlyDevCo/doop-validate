@@ -167,7 +167,9 @@ app.directive('v-validate', {
 			switch(settings.layout) {
 				case 'title':
 					if (status) {
-						$el.attr('title', status);
+						$el
+							.attr('data-v-validate-error', status)
+							.attr('title', status);
 					} else {
 						$el.removeAttr('title');
 					}
@@ -175,11 +177,13 @@ app.directive('v-validate', {
 				case 'tooltip':
 					$el.tooltip('dispose');
 					if (status) {
-						$el.tooltip({
-							trigger: 'manual',
-							title: status,
-							...settings.tooltip,
-						});
+						$el
+							.attr('data-v-validate-error', status)
+							.tooltip({
+								trigger: 'manual',
+								title: status,
+								...settings.tooltip,
+							});
 						// BUGFIX: Workaround for JQ + Vue not allowing the tooltip immediately
 						app.nextTick(()=> $el.tooltip('show'));
 					}
@@ -187,7 +191,10 @@ app.directive('v-validate', {
 				case 'help':
 					$el.siblings('small.form-text.text-danger').remove();
 					if (status)
-						app.nextTick(()=> $el.after(`<small class="form-text text-danger">${status}</small>`));
+						app.nextTick(()=> $el
+							.attr('data-v-validate-error', status)
+							.after(`<small class="form-text text-danger">${status}</small>`)
+						);
 					break;
 				default:
 					throw new Error(`Unknown v-validate layout "${settings.layout}"`);
