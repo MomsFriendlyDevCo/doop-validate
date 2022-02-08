@@ -15,6 +15,7 @@
     "url": "https://github.com/MomsFriendlyDevCo/doop-validate/issues"
   },
   "homepage": "https://github.com/MomsFriendlyDevCo/doop-validate#readme",
-  "dependencies": {
-  }
+  "workspaces": [
+    "../*"
+  ]
 }
