@@ -21,7 +21,7 @@
 *
 * @param {boolean} [settings.rules.required=false] Validate against whether a field has any value
 *
-* @param {function} [settings.satisifies] Validate against a (possibly async) function called as `(value, settings)`. Should return true for passing, all other values are treated as the basic error message, async responses are waited on (see `settings.rules`)
+* @param {function} [settings.rules.satisifies] Validate against a (possibly async) function called as `(value, settings)`. Should return true for passing, all other values are treated as the basic error message, async responses are waited on (see `settings.rules`)
 *
 * @param {string|Object} [settings.rules.endpoint] Either a string URL to satisfy or a set of options, NOTE: This is an async rule (see `settings.rules`)
 * @param {string|function} [settings.rules.endpoint.url] URL to query, use `:value` as the value of the input or specify a function which is called as `(value, settings)` which returns the Axios request
